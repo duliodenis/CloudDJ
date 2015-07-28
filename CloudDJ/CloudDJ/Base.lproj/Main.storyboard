@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aAb-uJ-Kb7">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Cloud DJ-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="N2C-dR-uxw">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4fI-mG-Z6R"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8Ds-J6-3PE"/>
+                                    <barButtonItem systemItem="rewind" id="pby-cz-Lwq"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="sOj-Gh-6i6"/>
+                                    <barButtonItem systemItem="play" id="WMh-1X-W8R"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="GwI-8K-5qb"/>
+                                    <barButtonItem systemItem="fastForward" id="v3s-Ol-2Nd"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Jxc-fD-aCQ"/>
+                                </items>
+                                <color key="tintColor" red="0.90196078431372551" green="0.20165910258994407" blue="0.89478478477698298" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N2C-dR-uxw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="2VO-Na-ftJ"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="N2C-dR-uxw" secondAttribute="bottom" id="FwJ-6r-kI7"/>
+                            <constraint firstAttribute="trailing" secondItem="N2C-dR-uxw" secondAttribute="trailing" id="flu-4i-juW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cloud DJ" id="Ae7-JP-Yl5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mg4-oM-b91"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101.5" y="386.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xeN-mA-hCK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aAb-uJ-Kb7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="BGm-ia-IBg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.90196078430000004" green="0.2016591026" blue="0.89478478480000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="1Op-G1-RvM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="75r-nm-e1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="387"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C1BE4A21B67C7D300153436 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1BE4A11B67C7D300153436 /* main.m */; };
+		6C1BE4A51B67C7D300153436 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1BE4A41B67C7D300153436 /* AppDelegate.m */; };
+		6C1BE4A81B67C7D300153436 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1BE4A71B67C7D300153436 /* ViewController.m */; };
+		6C1BE4AB1B67C7D400153436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C1BE4A91B67C7D400153436 /* Main.storyboard */; };
+		6C1BE4AD1B67C7D400153436 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C1BE4AC1B67C7D400153436 /* Images.xcassets */; };
+		6C1BE4B01B67C7D400153436 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C1BE4AE1B67C7D400153436 /* LaunchScreen.xib */; };
+		6C1BE4BC1B67C7D400153436 /* CloudDJTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1BE4BB1B67C7D400153436 /* CloudDJTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6C1BE4B61B67C7D400153436 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C1BE4941B67C7D300153436 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C1BE49B1B67C7D300153436;
+			remoteInfo = CloudDJ;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6C1BE49C1B67C7D300153436 /* CloudDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C1BE4A01B67C7D300153436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C1BE4A11B67C7D300153436 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6C1BE4A31B67C7D300153436 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6C1BE4A41B67C7D300153436 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6C1BE4A61B67C7D300153436 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6C1BE4A71B67C7D300153436 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6C1BE4AA1B67C7D400153436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6C1BE4AC1B67C7D400153436 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6C1BE4AF1B67C7D400153436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6C1BE4B51B67C7D400153436 /* CloudDJTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudDJTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C1BE4BA1B67C7D400153436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C1BE4BB1B67C7D400153436 /* CloudDJTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CloudDJTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C1BE4991B67C7D300153436 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C1BE4B21B67C7D400153436 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C1BE4931B67C7D300153436 = {
+			isa = PBXGroup;
+			children = (
+				6C1BE49E1B67C7D300153436 /* CloudDJ */,
+				6C1BE4B81B67C7D400153436 /* CloudDJTests */,
+				6C1BE49D1B67C7D300153436 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6C1BE49D1B67C7D300153436 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C1BE49C1B67C7D300153436 /* CloudDJ.app */,
+				6C1BE4B51B67C7D400153436 /* CloudDJTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C1BE49E1B67C7D300153436 /* CloudDJ */ = {
+			isa = PBXGroup;
+			children = (
+				6C1BE4C61B67CD9E00153436 /* Controller */,
+				6C1BE4C51B67CD9300153436 /* View */,
+				6C1BE4AC1B67C7D400153436 /* Images.xcassets */,
+				6C1BE49F1B67C7D300153436 /* Supporting Files */,
+			);
+			path = CloudDJ;
+			sourceTree = "<group>";
+		};
+		6C1BE49F1B67C7D300153436 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C1BE4A31B67C7D300153436 /* AppDelegate.h */,
+				6C1BE4A41B67C7D300153436 /* AppDelegate.m */,
+				6C1BE4A01B67C7D300153436 /* Info.plist */,
+				6C1BE4A11B67C7D300153436 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6C1BE4B81B67C7D400153436 /* CloudDJTests */ = {
+			isa = PBXGroup;
+			children = (
+				6C1BE4BB1B67C7D400153436 /* CloudDJTests.m */,
+				6C1BE4B91B67C7D400153436 /* Supporting Files */,
+			);
+			path = CloudDJTests;
+			sourceTree = "<group>";
+		};
+		6C1BE4B91B67C7D400153436 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C1BE4BA1B67C7D400153436 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6C1BE4C51B67CD9300153436 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6C1BE4A91B67C7D400153436 /* Main.storyboard */,
+				6C1BE4AE1B67C7D400153436 /* LaunchScreen.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6C1BE4C61B67CD9E00153436 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6C1BE4A61B67C7D300153436 /* ViewController.h */,
+				6C1BE4A71B67C7D300153436 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6C1BE49B1B67C7D300153436 /* CloudDJ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C1BE4BF1B67C7D400153436 /* Build configuration list for PBXNativeTarget "CloudDJ" */;
+			buildPhases = (
+				6C1BE4981B67C7D300153436 /* Sources */,
+				6C1BE4991B67C7D300153436 /* Frameworks */,
+				6C1BE49A1B67C7D300153436 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CloudDJ;
+			productName = CloudDJ;
+			productReference = 6C1BE49C1B67C7D300153436 /* CloudDJ.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6C1BE4B41B67C7D400153436 /* CloudDJTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C1BE4C21B67C7D400153436 /* Build configuration list for PBXNativeTarget "CloudDJTests" */;
+			buildPhases = (
+				6C1BE4B11B67C7D400153436 /* Sources */,
+				6C1BE4B21B67C7D400153436 /* Frameworks */,
+				6C1BE4B31B67C7D400153436 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C1BE4B71B67C7D400153436 /* PBXTargetDependency */,
+			);
+			name = CloudDJTests;
+			productName = CloudDJTests;
+			productReference = 6C1BE4B51B67C7D400153436 /* CloudDJTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6C1BE4941B67C7D300153436 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Dulio Denis";
+				TargetAttributes = {
+					6C1BE49B1B67C7D300153436 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					6C1BE4B41B67C7D400153436 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 6C1BE49B1B67C7D300153436;
+					};
+				};
+			};
+			buildConfigurationList = 6C1BE4971B67C7D300153436 /* Build configuration list for PBXProject "CloudDJ" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6C1BE4931B67C7D300153436;
+			productRefGroup = 6C1BE49D1B67C7D300153436 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C1BE49B1B67C7D300153436 /* CloudDJ */,
+				6C1BE4B41B67C7D400153436 /* CloudDJTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6C1BE49A1B67C7D300153436 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C1BE4AB1B67C7D400153436 /* Main.storyboard in Resources */,
+				6C1BE4B01B67C7D400153436 /* LaunchScreen.xib in Resources */,
+				6C1BE4AD1B67C7D400153436 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C1BE4B31B67C7D400153436 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C1BE4981B67C7D300153436 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C1BE4A81B67C7D300153436 /* ViewController.m in Sources */,
+				6C1BE4A51B67C7D300153436 /* AppDelegate.m in Sources */,
+				6C1BE4A21B67C7D300153436 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C1BE4B11B67C7D400153436 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C1BE4BC1B67C7D400153436 /* CloudDJTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6C1BE4B71B67C7D400153436 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C1BE49B1B67C7D300153436 /* CloudDJ */;
+			targetProxy = 6C1BE4B61B67C7D400153436 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6C1BE4A91B67C7D400153436 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C1BE4AA1B67C7D400153436 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6C1BE4AE1B67C7D400153436 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C1BE4AF1B67C7D400153436 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6C1BE4BD1B67C7D400153436 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6C1BE4BE1B67C7D400153436 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6C1BE4C01B67C7D400153436 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CloudDJ/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6C1BE4C11B67C7D400153436 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CloudDJ/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6C1BE4C31B67C7D400153436 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CloudDJTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloudDJ.app/CloudDJ";
+			};
+			name = Debug;
+		};
+		6C1BE4C41B67C7D400153436 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CloudDJTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloudDJ.app/CloudDJ";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C1BE4971B67C7D300153436 /* Build configuration list for PBXProject "CloudDJ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C1BE4BD1B67C7D400153436 /* Debug */,
+				6C1BE4BE1B67C7D400153436 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C1BE4BF1B67C7D400153436 /* Build configuration list for PBXNativeTarget "CloudDJ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C1BE4C01B67C7D400153436 /* Debug */,
+				6C1BE4C11B67C7D400153436 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6C1BE4C21B67C7D400153436 /* Build configuration list for PBXNativeTarget "CloudDJTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C1BE4C31B67C7D400153436 /* Debug */,
+				6C1BE4C41B67C7D400153436 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6C1BE4941B67C7D300153436 /* Project object */;
+}

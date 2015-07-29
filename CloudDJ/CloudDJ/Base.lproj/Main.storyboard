@@ -25,7 +25,11 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="8Ds-J6-3PE"/>
                                     <barButtonItem systemItem="rewind" id="pby-cz-Lwq"/>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="sOj-Gh-6i6"/>
-                                    <barButtonItem systemItem="play" id="WMh-1X-W8R"/>
+                                    <barButtonItem systemItem="play" id="WMh-1X-W8R">
+                                        <connections>
+                                            <action selector="playPauseToggle:" destination="vXZ-lx-hvc" id="Yj4-3e-r0k"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="GwI-8K-5qb"/>
                                     <barButtonItem systemItem="fastForward" id="v3s-Ol-2Nd"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Jxc-fD-aCQ"/>
@@ -41,9 +45,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cloud DJ" id="Ae7-JP-Yl5">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mg4-oM-b91"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mg4-oM-b91">
+                            <connections>
+                                <action selector="addMusic:" destination="vXZ-lx-hvc" id="RAY-Wq-I8I"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="playerBar" destination="N2C-dR-uxw" id="6dE-iZ-5ae"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

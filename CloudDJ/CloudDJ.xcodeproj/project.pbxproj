@@ -432,6 +432,7 @@
 				6C1BE4C11B67C7D400153436 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C1BE4C21B67C7D400153436 /* Build configuration list for PBXNativeTarget "CloudDJTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +441,7 @@
 				6C1BE4C41B67C7D400153436 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

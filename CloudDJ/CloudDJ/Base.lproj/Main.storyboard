@@ -16,24 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="N2C-dR-uxw">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="N2C-dR-uxw" customClass="Playerbar">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4fI-mG-Z6R"/>
                                 </constraints>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8Ds-J6-3PE"/>
-                                    <barButtonItem systemItem="rewind" id="pby-cz-Lwq"/>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="sOj-Gh-6i6"/>
-                                    <barButtonItem systemItem="play" id="WMh-1X-W8R">
-                                        <connections>
-                                            <action selector="playPauseToggle:" destination="vXZ-lx-hvc" id="Yj4-3e-r0k"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="GwI-8K-5qb"/>
-                                    <barButtonItem systemItem="fastForward" id="v3s-Ol-2Nd"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Jxc-fD-aCQ"/>
-                                </items>
+                                <items/>
                                 <color key="tintColor" red="0.90196078431372551" green="0.20165910258994407" blue="0.89478478477698298" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>

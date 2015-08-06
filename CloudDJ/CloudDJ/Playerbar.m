@@ -65,8 +65,16 @@
 
 - (UIBarButtonItem *)buttonWithImageNamed:(NSString *)imageName {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *imageNormalState = [UIImage imageNamed:imageName];
-    UIImage *imageSelectedState = [UIImage imageNamed:[NSString stringWithFormat:@"%@-selected",imageName]];
+    
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    
+    UIImage *imageNormalState = [UIImage imageNamed:imageName
+                                           inBundle:bundle
+                      compatibleWithTraitCollection:self.traitCollection];
+    UIImage *imageSelectedState = [UIImage imageNamed:[NSString stringWithFormat:@"%@-selected",imageName]
+                                             inBundle:bundle
+                        compatibleWithTraitCollection:self.traitCollection];
+    
     [button setImage:[imageNormalState imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
             forState:UIControlStateNormal];
     [button setImage:[imageSelectedState imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
@@ -87,6 +95,33 @@
 
 - (UIBarButtonItem *)setupNextButton {
     return [self buttonWithImageNamed:@"1248-skip-ahead-toolbar"];
+}
+
+
+#pragma mark - Interface Builder Lifecycle Methods
+
+- (void)prepareForInterfaceBuilder {
+    UIView *previous = [[self setupPreviousButton] customView];
+    UIView *play = [[self setupPlayButton] customView];
+    UIView *next = [[self setupNextButton] customView];
+    
+    CGFloat widthOfControl = self.frame.size.width;
+    CGFloat heightOfControl = self.frame.size.height;
+    
+    CGFloat buttonWidth = play.frame.size.width;
+    CGFloat buttonHeight = play.frame.size.height;
+    
+    CGFloat y = (heightOfControl - buttonHeight) / 2.0f;
+    CGFloat x = ((widthOfControl - 3 * buttonWidth) - (2 * self.spacing)) / 2.0f;
+    
+    NSArray *views = @[ previous, play, next ];
+    for (UIView *view in views) {
+        CGRect rect = CGRectMake(x, y, buttonWidth, buttonHeight);
+        view.frame = rect;
+        
+        [self addSubview:view];
+        x += buttonWidth + self.spacing;
+    }
 }
 
 @end

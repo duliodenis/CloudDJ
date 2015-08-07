@@ -8,6 +8,7 @@
 
 @import MediaPlayer;
 #import "ViewController.h"
+#import "PlaylistDataSource.h"
 
 
 @interface ViewController () <MPMediaPickerControllerDelegate>
@@ -15,6 +16,7 @@
 @property (nonatomic) MPMusicPlayerController *player;
 @property (weak, nonatomic) IBOutlet UIToolbar *playerBar;
 @property (nonatomic) UIBarButtonItem *playButton;
+@property (nonatomic) IBOutlet PlaylistDataSource *playlistDataSource;
 @end
 
 @implementation ViewController

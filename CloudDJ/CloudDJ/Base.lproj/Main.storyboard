@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aAb-uJ-Kb7">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Cloud DJ-->
@@ -29,12 +30,40 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </toolbar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cBw-dT-EkL">
+                                <rect key="frame" x="16" y="64" width="343" height="559"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="ZLu-qn-sXR">
+                                    <size key="itemSize" width="375" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="ysT-f2-oE6">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.90196078430000004" green="0.2016591026" blue="0.89478478480000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="YRR-qt-Fs2" id="yU5-Dh-ora"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="N2C-dR-uxw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="2VO-Na-ftJ"/>
+                            <constraint firstItem="cBw-dT-EkL" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Bob-gT-Yow"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="N2C-dR-uxw" secondAttribute="bottom" id="FwJ-6r-kI7"/>
                             <constraint firstAttribute="trailing" secondItem="N2C-dR-uxw" secondAttribute="trailing" id="flu-4i-juW"/>
+                            <constraint firstItem="N2C-dR-uxw" firstAttribute="top" secondItem="cBw-dT-EkL" secondAttribute="bottom" id="gzY-4Y-WWE"/>
+                            <constraint firstItem="cBw-dT-EkL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ki1-lo-Rcz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cBw-dT-EkL" secondAttribute="trailing" id="ppL-Eu-HDa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cloud DJ" id="Ae7-JP-Yl5">
@@ -47,9 +76,11 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="playerBar" destination="N2C-dR-uxw" id="6dE-iZ-5ae"/>
+                        <outlet property="playlistDataSource" destination="YRR-qt-Fs2" id="xds-Ze-uEL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <customObject id="YRR-qt-Fs2" customClass="PlaylistDataSource"/>
             </objects>
             <point key="canvasLocation" x="1101.5" y="386.5"/>
         </scene>

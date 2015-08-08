@@ -9,6 +9,7 @@
 @import MediaPlayer;
 #import "ViewController.h"
 #import "PlaylistDataSource.h"
+#import "SamplePlaylistItem.h"
 
 
 @interface ViewController () <MPMediaPickerControllerDelegate>
@@ -27,6 +28,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.player = [[MPMusicPlayerController alloc] init];
+    
+#if TARGET_IPHONE_SIMULATOR // In Simulator Add Sample Playlist Items
+    NSArray *items = @[
+                       [[SamplePlaylistItem alloc] initWithImage:[UIImage imageNamed:@"inutero.jpg"] artist:@"Nirvana" song:@"Heart-Shaped Box"],
+                       [[SamplePlaylistItem alloc] initWithImage:[UIImage imageNamed:@"inrainbows.jpg"] artist:@"Radiohead" song:@"House of Cards"],
+                       [[SamplePlaylistItem alloc] initWithImage:[UIImage imageNamed:@"aenima.jpg"] artist:@"Tool" song:@"Forty-six and Two"],
+                       [[SamplePlaylistItem alloc] initWithImage:[UIImage imageNamed:@"meddle.jpg"] artist:@"Pink Floyd" song:@"Echoes"],
+                       [[SamplePlaylistItem alloc] initWithImage:[UIImage imageNamed:@"andjustice.jpg"] artist:@"Metallica" song:@"One"],
+                       [[SamplePlaylistItem alloc] initWithImage:[UIImage imageNamed:@"bloodsugar.jpg"] artist:@"Red Hot Chili Peppers" song:@"Give it Away"],
+                       [[SamplePlaylistItem alloc] initWithImage:[UIImage imageNamed:@"inrainbows.jpg"] artist:@"Radiohead" song:@"House of Cards"],
+                       [[SamplePlaylistItem alloc] initWithImage:[UIImage imageNamed:@"ten.jpg"] artist:@"Pearl Jam" song:@"Ten"],
+                       [[SamplePlaylistItem alloc] initWithImage:[UIImage imageNamed:@"darkside.jpg"] artist:@"Pink Floyd" song:@"The Great Gig in the Sky"],
+                       [[SamplePlaylistItem alloc] initWithImage:[UIImage imageNamed:@"dummy.jpg"] artist:@"Portishead" song:@"Strangers"],
+                       [[SamplePlaylistItem alloc] initWithImage:[UIImage imageNamed:@"suburbs.jpg"] artist:@"Arcade Fire" song:@"Modern Man"],
+                       [[SamplePlaylistItem alloc] initWithImage:[UIImage imageNamed:@"housesoftheholy.jpg"] artist:@"Led Zeppelin" song:@"No Quarter"],
+                       [[SamplePlaylistItem alloc] initWithImage:[UIImage imageNamed:@"kindofblue.jpg"] artist:@"Miles Davis" song:@"Freddie Freeloader"]
+                       ];
+    
+    self.playlistDataSource.items = items;
+#endif
 }
 
 

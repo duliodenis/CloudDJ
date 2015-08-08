@@ -39,15 +39,51 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="ysT-f2-oE6">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="ysT-f2-oE6" customClass="PlaylistItemCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ejs-cq-Cr7">
+                                                    <rect key="frame" x="8" y="0.0" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="ZS3-5i-myO"/>
+                                                        <constraint firstAttribute="width" constant="60" id="gED-1l-jM1"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pp7-Gv-uOh">
+                                                    <rect key="frame" x="82" y="8" width="78" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4J-dV-uci">
+                                                    <rect key="frame" x="83" y="26" width="33" height="16"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.90196078430000004" green="0.2016591026" blue="0.89478478480000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.29465728051212114" green="0.29465728051212114" blue="0.29465728051212114" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="pp7-Gv-uOh" firstAttribute="top" secondItem="ysT-f2-oE6" secondAttribute="topMargin" id="7uj-uM-GKw"/>
+                                            <constraint firstItem="v4J-dV-uci" firstAttribute="top" secondItem="pp7-Gv-uOh" secondAttribute="bottom" constant="-3" id="ByG-Np-x86"/>
+                                            <constraint firstItem="v4J-dV-uci" firstAttribute="leading" secondItem="pp7-Gv-uOh" secondAttribute="leading" constant="1" id="NU1-dY-fdr"/>
+                                            <constraint firstItem="ejs-cq-Cr7" firstAttribute="top" secondItem="ysT-f2-oE6" secondAttribute="top" id="VnU-pf-2e8"/>
+                                            <constraint firstItem="ejs-cq-Cr7" firstAttribute="leading" secondItem="ysT-f2-oE6" secondAttribute="leading" constant="8" id="Z9q-Td-vhL"/>
+                                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="pp7-Gv-uOh" secondAttribute="trailing" constant="4" id="lQI-jx-vo6"/>
+                                            <constraint firstItem="pp7-Gv-uOh" firstAttribute="leading" secondItem="ejs-cq-Cr7" secondAttribute="trailing" constant="14" id="q0B-cb-hxq"/>
+                                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="v4J-dV-uci" secondAttribute="trailing" constant="4" id="una-f3-yRu"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="artistLabel" destination="v4J-dV-uci" id="BwF-qp-gP8"/>
+                                            <outlet property="imageView" destination="ejs-cq-Cr7" id="ITZ-Q9-Vcv"/>
+                                            <outlet property="songLabel" destination="pp7-Gv-uOh" id="wkg-qW-zqw"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -80,7 +116,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <customObject id="YRR-qt-Fs2" customClass="PlaylistDataSource"/>
+                <customObject id="YRR-qt-Fs2" customClass="PlaylistDataSource">
+                    <connections>
+                        <outlet property="collectionView" destination="cBw-dT-EkL" id="8RC-bB-xoO"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1101.5" y="386.5"/>
         </scene>

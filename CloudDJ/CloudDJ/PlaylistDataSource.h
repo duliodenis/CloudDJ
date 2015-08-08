@@ -6,9 +6,11 @@
 //  Copyright (c) 2015 Dulio Denis. All rights reserved.
 //
 
-@import Foundation;
 @import UIKit;
 
 @interface PlaylistDataSource : NSObject <UICollectionViewDataSource>
+
+@property (nonatomic) NSArray *items;
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 
 @end

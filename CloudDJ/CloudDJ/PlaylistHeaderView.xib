@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PlaylistHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kindofblue" translatesAutoresizingMaskIntoConstraints="NO" id="BbJ-Pg-2Sy">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
+                </imageView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V01-td-j1v">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OL8-1Y-JfM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kindofblue" translatesAutoresizingMaskIntoConstraints="NO" id="tkD-dw-A38">
+                                <rect key="frame" x="37" y="70" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tkD-dw-A38" secondAttribute="height" multiplier="1:1" id="hIG-bE-d1m"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdA-AX-25N">
+                                <rect key="frame" x="37" y="378" width="300" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebh-7O-e5I">
+                                <rect key="frame" x="37" y="397" width="300" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="13"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="tkD-dw-A38" secondAttribute="centerY" constant="-0.5" id="NSG-7m-6bj"/>
+                            <constraint firstItem="JdA-AX-25N" firstAttribute="width" secondItem="ebh-7O-e5I" secondAttribute="width" id="PjV-wN-XOu"/>
+                            <constraint firstItem="tkD-dw-A38" firstAttribute="top" secondItem="OL8-1Y-JfM" secondAttribute="top" constant="70" id="WIX-Za-N7o"/>
+                            <constraint firstAttribute="centerX" secondItem="JdA-AX-25N" secondAttribute="centerX" constant="0.5" id="afx-Yy-GNl"/>
+                            <constraint firstItem="tkD-dw-A38" firstAttribute="leading" secondItem="OL8-1Y-JfM" secondAttribute="leading" constant="37" id="cIP-jB-SW2"/>
+                            <constraint firstItem="JdA-AX-25N" firstAttribute="centerX" secondItem="ebh-7O-e5I" secondAttribute="centerX" id="hm9-Vj-KAg"/>
+                            <constraint firstItem="JdA-AX-25N" firstAttribute="top" secondItem="tkD-dw-A38" secondAttribute="bottom" constant="8" id="jbs-MJ-B5t"/>
+                            <constraint firstItem="JdA-AX-25N" firstAttribute="width" secondItem="tkD-dw-A38" secondAttribute="width" id="o9S-aT-Dbb"/>
+                            <constraint firstAttribute="trailing" secondItem="tkD-dw-A38" secondAttribute="trailing" constant="38" id="oMi-hF-LUy"/>
+                            <constraint firstItem="ebh-7O-e5I" firstAttribute="top" secondItem="JdA-AX-25N" secondAttribute="bottom" constant="1" id="qbU-oL-6ju"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="V01-td-j1v" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5rg-NE-878"/>
+                <constraint firstItem="V01-td-j1v" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HND-LQ-DKd"/>
+                <constraint firstAttribute="trailing" secondItem="BbJ-Pg-2Sy" secondAttribute="trailing" id="LrR-V2-kWf"/>
+                <constraint firstAttribute="bottom" secondItem="V01-td-j1v" secondAttribute="bottom" id="Vwr-1y-iWb"/>
+                <constraint firstAttribute="bottom" secondItem="BbJ-Pg-2Sy" secondAttribute="bottom" id="bDQ-up-IOP"/>
+                <constraint firstItem="BbJ-Pg-2Sy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="g4R-Ji-rzt"/>
+                <constraint firstItem="BbJ-Pg-2Sy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kFb-fr-XHF"/>
+                <constraint firstAttribute="trailing" secondItem="V01-td-j1v" secondAttribute="trailing" id="z2z-Mr-W34"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="artistLabel" destination="ebh-7O-e5I" id="LCb-kF-M93"/>
+                <outlet property="blurredImageView" destination="BbJ-Pg-2Sy" id="Rqh-6h-h3a"/>
+                <outlet property="imageView" destination="tkD-dw-A38" id="iCg-Ac-7j9"/>
+                <outlet property="songLabel" destination="JdA-AX-25N" id="cUy-Mg-BgP"/>
+            </connections>
+            <point key="canvasLocation" x="405.5" y="389.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="kindofblue" width="150" height="150"/>
+    </resources>
+</document>

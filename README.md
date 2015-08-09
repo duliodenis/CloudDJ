@@ -1,7 +1,7 @@
 # Cloud DJ
 Cloud DJ is an iOS app that enables you to build an audio playlist from your music in the cloud.
 
-![](https://raw.githubusercontent.com/duliodenis/CloudDJ/master/art/CloudDJ.png)
+![](https://raw.githubusercontent.com/duliodenis/CloudDJ/master/art/CloudDJ-v2.png)
 
 It has been designed with a Noir UX.
 

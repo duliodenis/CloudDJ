@@ -13,6 +13,7 @@
 
 
 @interface ViewController () <MPMediaPickerControllerDelegate>
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) MPMediaItemCollection *playlist;
 @property (nonatomic) MPMusicPlayerController *player;
 @property (weak, nonatomic) IBOutlet UIToolbar *playerBar;
@@ -28,6 +29,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.player = [[MPMusicPlayerController alloc] init];
+    
+    // Place the collection view slightly under the Navbar
+    self.collectionView.contentInset = UIEdgeInsetsMake(-64, 0, 44, 0);
+    
+    // Set-up CollectionView Header to display playing song
+    [self.collectionView registerNib:[UINib nibWithNibName:@"PlaylistHeaderView"
+                                                    bundle:nil]
+          forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                 withReuseIdentifier:@"header"];
+    
     
 #if TARGET_IPHONE_SIMULATOR // In Simulator Add Sample Playlist Items
     NSArray *items = @[

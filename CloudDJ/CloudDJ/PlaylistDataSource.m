@@ -9,9 +9,21 @@
 #import "PlaylistDataSource.h"
 #import "PlaylistItem.h"
 #import "PlaylistItemCollectionViewCell.h"
-#import "PlaylistHeaderView.h"
+
 
 @implementation PlaylistDataSource
+
+
+- (void)setPlaylistHeaderView:(PlaylistHeaderView *)playlistHeaderView {
+    _playlistHeaderView = playlistHeaderView;
+    
+    // Update Header with currently playing track if we have something
+    if (self.items.count > 0) {
+        id<PlaylistItem> item = self.items[_currentTrackIndex];
+        [self.playlistHeaderView setPlaylistItem:item animated:YES];
+    }
+}
+
 
 - (void)setCurrentTrackIndex:(NSInteger)currentTrackIndex {
     _currentTrackIndex = currentTrackIndex;
@@ -22,14 +34,40 @@
         _currentTrackIndex = self.items.count - 1;
     }
     
-    // trigger a collection view layout update
-    [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+    // Update Header with currently playing track
+    id<PlaylistItem> item = self.items[_currentTrackIndex];
+    [self.playlistHeaderView setPlaylistItem:item animated:YES];
+    
+    // Scroll to track
+    if (self.items.count > _currentTrackIndex + 1) {
+        NSIndexPath *nextTrackIndexPath = [NSIndexPath indexPathForItem:_currentTrackIndex + 1
+                                                              inSection:0];
+        [self.collectionView scrollToItemAtIndexPath:nextTrackIndexPath
+                                    atScrollPosition:UICollectionViewScrollPositionTop
+                                            animated:YES];
+    }
 }
 
 
 - (void)setItems:(NSArray *)items {
     _items = items;
+    
+    // Update Header with currently playing track if we have something
+    if (self.items.count > 0) {
+        id<PlaylistItem> item = self.items[_currentTrackIndex];
+        [self.playlistHeaderView setPlaylistItem:item animated:YES];
+    }
+    
     [self.collectionView reloadData];
+    
+    // Scroll to track
+    if (self.items.count > 1) {
+        NSIndexPath *nextTrackIndexPath = [NSIndexPath indexPathForItem:_currentTrackIndex + 1
+                                                              inSection:0];
+        [self.collectionView scrollToItemAtIndexPath:nextTrackIndexPath
+                                    atScrollPosition:UICollectionViewScrollPositionTop
+                                            animated:NO];
+    }
 }
 
 
@@ -48,19 +86,6 @@
     cell.songLabel.text = playlistItem.song;
      
     return cell;
-}
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
-           viewForSupplementaryElementOfKind:(NSString *)kind
-                                 atIndexPath:(NSIndexPath *)indexPath {
-    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        PlaylistHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
-                                                                        withReuseIdentifier:@"header" forIndexPath:indexPath];
-        [header setPlaylistItem:self.items[self.currentTrackIndex] animated:YES];
-        return header;
-    }
-    
-    return nil;
 }
 
 @end

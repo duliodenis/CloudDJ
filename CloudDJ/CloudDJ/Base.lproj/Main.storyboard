@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cBw-dT-EkL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="495" width="375" height="172"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="ZLu-qn-sXR">
                                     <size key="itemSize" width="375" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="439"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
@@ -73,10 +73,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="juJ-te-vec">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="493"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="YRR-qt-Fs2" id="yU5-Dh-ora"/>
                                 </connections>
@@ -97,12 +93,22 @@
                                     <outlet property="playerbarDelegate" destination="vXZ-lx-hvc" id="CAy-ec-Zph"/>
                                 </connections>
                             </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4U-SJ-Uhd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="439"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="439" id="apg-fS-CaE"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="N2C-dR-uxw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="2VO-Na-ftJ"/>
-                            <constraint firstItem="cBw-dT-EkL" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="Bob-gT-Yow"/>
+                            <constraint firstItem="cBw-dT-EkL" firstAttribute="top" secondItem="Y4U-SJ-Uhd" secondAttribute="bottom" constant="-8" id="9gh-em-BnC"/>
+                            <constraint firstItem="Y4U-SJ-Uhd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="B9E-2x-p4d"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="N2C-dR-uxw" secondAttribute="bottom" id="FwJ-6r-kI7"/>
+                            <constraint firstAttribute="trailing" secondItem="Y4U-SJ-Uhd" secondAttribute="trailing" id="SWy-nu-c5t"/>
+                            <constraint firstItem="Y4U-SJ-Uhd" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="dJT-AZ-LIy"/>
                             <constraint firstAttribute="trailing" secondItem="N2C-dR-uxw" secondAttribute="trailing" id="flu-4i-juW"/>
                             <constraint firstItem="N2C-dR-uxw" firstAttribute="bottom" secondItem="cBw-dT-EkL" secondAttribute="bottom" id="gzY-4Y-WWE"/>
                             <constraint firstItem="cBw-dT-EkL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="ki1-lo-Rcz"/>
@@ -119,12 +125,17 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="collectionView" destination="cBw-dT-EkL" id="DBq-vY-4BD"/>
+                        <outlet property="headerContainerView" destination="Y4U-SJ-Uhd" id="8JZ-7u-asM"/>
                         <outlet property="playerBar" destination="N2C-dR-uxw" id="6dE-iZ-5ae"/>
                         <outlet property="playlistDataSource" destination="YRR-qt-Fs2" id="xds-Ze-uEL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <customObject id="YRR-qt-Fs2" customClass="PlaylistDataSource"/>
+                <customObject id="YRR-qt-Fs2" customClass="PlaylistDataSource">
+                    <connections>
+                        <outlet property="collectionView" destination="cBw-dT-EkL" id="ryS-Cz-App"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1101.5" y="386.5"/>
         </scene>

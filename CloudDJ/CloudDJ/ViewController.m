@@ -10,14 +10,18 @@
 #import "ViewController.h"
 #import "PlaylistDataSource.h"
 #import "SamplePlaylistItem.h"
+#import "PlaylistHeaderView.h"
 
 
 @interface ViewController () <MPMediaPickerControllerDelegate>
-@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+
 @property (nonatomic) MPMediaItemCollection *playlist;
 @property (nonatomic) MPMusicPlayerController *player;
-@property (weak, nonatomic) IBOutlet UIToolbar *playerBar;
 @property (nonatomic) UIBarButtonItem *playButton;
+
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, weak) IBOutlet UIToolbar *playerBar;
+@property (nonatomic, weak) IBOutlet UIView *headerContainerView;
 @property (nonatomic) IBOutlet PlaylistDataSource *playlistDataSource;
 @end
 
@@ -34,11 +38,13 @@
     self.collectionView.contentInset = UIEdgeInsetsMake(-64, 0, 44, 0);
     
     // Set-up CollectionView Header to display playing song
-    [self.collectionView registerNib:[UINib nibWithNibName:@"PlaylistHeaderView"
-                                                    bundle:nil]
-          forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
-                 withReuseIdentifier:@"header"];
+    UINib *headerNib = [UINib nibWithNibName:@"PlaylistHeaderView"
+                                      bundle:nil];
+    NSArray *objects = [headerNib instantiateWithOwner:self
+                                              options:nil];
     
+    PlaylistHeaderView *header = [objects firstObject];
+    [self.headerContainerView addSubview:header];
     
 #if TARGET_IPHONE_SIMULATOR // In Simulator Add Sample Playlist Items
     NSArray *items = @[
@@ -59,6 +65,9 @@
     
     self.playlistDataSource.items = items;
 #endif
+    
+    // set the playlist header view to the header subview
+    self.playlistDataSource.playlistHeaderView = header;
 }
 
 

@@ -6,9 +6,10 @@
 //  Copyright (c) 2015 Dulio Denis. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+#import "Playerbar.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <PlayerbarDelegate>
 
 
 @end

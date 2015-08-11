@@ -17,21 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="N2C-dR-uxw" customClass="Playerbar">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="4fI-mG-Z6R"/>
-                                </constraints>
-                                <items/>
-                                <color key="tintColor" red="0.90196078431372551" green="0.20165910258994407" blue="0.89478478477698298" alpha="1" colorSpace="calibratedRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
-                                        <real key="value" value="44"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </toolbar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cBw-dT-EkL">
-                                <rect key="frame" x="16" y="64" width="343" height="559"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="ZLu-qn-sXR">
                                     <size key="itemSize" width="375" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="439"/>
@@ -86,7 +73,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="juJ-te-vec">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="juJ-te-vec">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="493"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
@@ -94,16 +81,32 @@
                                     <outlet property="dataSource" destination="YRR-qt-Fs2" id="yU5-Dh-ora"/>
                                 </connections>
                             </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="N2C-dR-uxw" customClass="Playerbar">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4fI-mG-Z6R"/>
+                                </constraints>
+                                <items/>
+                                <color key="tintColor" red="0.90196078431372551" green="0.20165910258994407" blue="0.89478478477698298" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="44"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="playerbarDelegate" destination="vXZ-lx-hvc" id="CAy-ec-Zph"/>
+                                </connections>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="N2C-dR-uxw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="2VO-Na-ftJ"/>
-                            <constraint firstItem="cBw-dT-EkL" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Bob-gT-Yow"/>
+                            <constraint firstItem="cBw-dT-EkL" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="Bob-gT-Yow"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="N2C-dR-uxw" secondAttribute="bottom" id="FwJ-6r-kI7"/>
                             <constraint firstAttribute="trailing" secondItem="N2C-dR-uxw" secondAttribute="trailing" id="flu-4i-juW"/>
-                            <constraint firstItem="N2C-dR-uxw" firstAttribute="top" secondItem="cBw-dT-EkL" secondAttribute="bottom" id="gzY-4Y-WWE"/>
-                            <constraint firstItem="cBw-dT-EkL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ki1-lo-Rcz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cBw-dT-EkL" secondAttribute="trailing" id="ppL-Eu-HDa"/>
+                            <constraint firstItem="N2C-dR-uxw" firstAttribute="bottom" secondItem="cBw-dT-EkL" secondAttribute="bottom" id="gzY-4Y-WWE"/>
+                            <constraint firstItem="cBw-dT-EkL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="ki1-lo-Rcz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cBw-dT-EkL" secondAttribute="trailing" constant="-16" id="ppL-Eu-HDa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cloud DJ" id="Ae7-JP-Yl5">

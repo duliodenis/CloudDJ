@@ -63,7 +63,7 @@
 
 #pragma mark - Button Helper Methods
 
-- (UIBarButtonItem *)buttonWithImageNamed:(NSString *)imageName {
+- (UIBarButtonItem *)buttonWithImageNamed:(NSString *)imageName target:(id)target action:(SEL)action {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
@@ -74,6 +74,10 @@
     UIImage *imageSelectedState = [UIImage imageNamed:[NSString stringWithFormat:@"%@-selected",imageName]
                                              inBundle:bundle
                         compatibleWithTraitCollection:self.traitCollection];
+    
+    [button addTarget:target
+               action:action
+     forControlEvents:UIControlEventTouchUpInside];
     
     [button setImage:[imageNormalState imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
             forState:UIControlStateNormal];
@@ -86,15 +90,23 @@
 
 
 - (UIBarButtonItem *)setupPreviousButton {
-    return [self buttonWithImageNamed:@"1247-skip-back-toolbar"];
+    return [self buttonWithImageNamed:@"1247-skip-back-toolbar"
+                               target:self
+                               action:@selector(skipBack:)];
 }
+
 
 - (UIBarButtonItem *)setupPlayButton {
-    return [self buttonWithImageNamed:@"1241-play-toolbar"];
+    return [self buttonWithImageNamed:@"1241-play-toolbar"
+                               target:self
+                               action:@selector(playPause:)];
 }
 
+
 - (UIBarButtonItem *)setupNextButton {
-    return [self buttonWithImageNamed:@"1248-skip-ahead-toolbar"];
+    return [self buttonWithImageNamed:@"1248-skip-ahead-toolbar"
+                               target:self
+                               action:@selector(skipForward:)];
 }
 
 
@@ -122,6 +134,23 @@
         [self addSubview:view];
         x += buttonWidth + self.spacing;
     }
+}
+
+
+#pragma mark - Playbar Action Methods: (back, next, play/pause)
+
+- (void)skipBack:(id)sender {
+    [self.playerbarDelegate playerbarPreviousTrack:self];
+}
+
+
+- (void)skipForward:(id)sender {
+    [self.playerbarDelegate playerbarNextTrack:self];
+}
+
+
+- (void)playPause:(id)sender {
+    [self.playerbarDelegate playerbarPlayPause:self];
 }
 
 @end

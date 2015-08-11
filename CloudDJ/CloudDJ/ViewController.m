@@ -148,4 +148,21 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+#pragma mark - Playerbar Delegate Methods
+
+- (void)playerbarPreviousTrack:(Playerbar *)playerbar {
+    self.playlistDataSource.currentTrackIndex -= 1;
+}
+
+
+- (void)playerbarNextTrack:(Playerbar *)playerbar {
+    self.playlistDataSource.currentTrackIndex += 1;
+}
+
+
+- (void)playerbarPlayPause:(Playerbar *)playerbar {
+    
+}
+
 @end

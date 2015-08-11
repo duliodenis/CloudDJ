@@ -13,6 +13,20 @@
 
 @implementation PlaylistDataSource
 
+- (void)setCurrentTrackIndex:(NSInteger)currentTrackIndex {
+    _currentTrackIndex = currentTrackIndex;
+    
+    if (_currentTrackIndex >= (NSInteger)self.items.count) {
+        _currentTrackIndex = 0;
+    } else if (_currentTrackIndex < 0) {
+        _currentTrackIndex = self.items.count - 1;
+    }
+    
+    // trigger a collection view layout update
+    [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+}
+
+
 - (void)setItems:(NSArray *)items {
     _items = items;
     [self.collectionView reloadData];
@@ -42,7 +56,7 @@
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         PlaylistHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
                                                                         withReuseIdentifier:@"header" forIndexPath:indexPath];
-        [header setPlaylistItem:self.items[0] animated:YES];
+        [header setPlaylistItem:self.items[self.currentTrackIndex] animated:YES];
         return header;
     }
     

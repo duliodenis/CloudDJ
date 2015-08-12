@@ -13,6 +13,16 @@
 
 #pragma mark - Initializers
 
+
+- (void)setEnabled:(BOOL)enabled {
+    _enabled = enabled;
+    
+    for (UIBarButtonItem *item in self.items) {
+        item.enabled = enabled;
+    }
+}
+
+
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     
@@ -58,6 +68,10 @@
                    nextButton,
                    flexibleSpace
                    ];
+    
+    for (UIBarButtonItem *item in self.items) {
+        item.enabled = self.enabled;
+    }
 }
 
 

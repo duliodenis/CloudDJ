@@ -19,7 +19,28 @@
     };
     
     if (animated) {
-        [UIView animateWithDuration:0.4 animations:updateBlock];
+        //  transitionWithView is a little choppy
+        /* [UIView transitionWithView:self.imageView
+                          duration:0.8
+                           options:UIViewAnimationOptionTransitionCrossDissolve
+                        animations:^{
+                            updateBlock();
+                        } completion:^(BOOL finished) {
+                            
+                        }]; */
+        
+        // instead take a snapshot of the current state and overlay it
+        UIView *previousState = [self snapshotViewAfterScreenUpdates:NO];
+        [self addSubview:previousState];
+        updateBlock(); // then update in the background
+        
+        // and animate the foreground away
+        [UIView animateWithDuration:0.3
+                         animations:^{
+                             previousState.alpha = 0;
+                         } completion:^(BOOL finished) {
+                             [previousState removeFromSuperview];
+                         }];
     } else {
         updateBlock();
     }

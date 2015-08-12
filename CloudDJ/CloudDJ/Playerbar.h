@@ -13,8 +13,10 @@
 IB_DESIGNABLE
 @interface Playerbar : UIToolbar
 
-@property (nonatomic, assign) IBInspectable CGFloat spacing;
 @property (nonatomic, weak) IBOutlet id<PlayerbarDelegate> playerbarDelegate;
+
+@property (nonatomic, assign) IBInspectable CGFloat spacing;
+@property (nonatomic, assign) BOOL enabled;
 
 @end 
 

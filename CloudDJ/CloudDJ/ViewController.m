@@ -20,7 +20,7 @@
 @property (nonatomic) UIBarButtonItem *playButton;
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, weak) IBOutlet UIToolbar *playerBar;
+@property (nonatomic, weak) IBOutlet Playerbar *playerBar;
 @property (nonatomic, weak) IBOutlet UIView *headerContainerView;
 @property (nonatomic) IBOutlet PlaylistDataSource *playlistDataSource;
 @end
@@ -64,6 +64,7 @@
                        ];
     
     self.playlistDataSource.items = items;
+    self.playerBar.enabled = YES;
 #endif
     
     // set the playlist header view to the header subview
@@ -135,6 +136,8 @@
         MPMediaItemCollection *collection = [MPMediaItemCollection collectionWithItems:items];
         self.playlist = collection;
     }
+    
+    self.playerBar.enabled = YES;
     
     // Console Output
     int index = 1;

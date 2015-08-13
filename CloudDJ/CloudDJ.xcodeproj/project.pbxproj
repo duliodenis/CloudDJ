@@ -21,6 +21,7 @@
 		6C90B9A41B7699CD00CD52A4 /* PlaylistItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C90B9A31B7699CD00CD52A4 /* PlaylistItemCollectionViewCell.m */; };
 		6C90B9A71B77A61300CD52A4 /* PlaylistHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C90B9A61B77A61300CD52A4 /* PlaylistHeaderView.m */; };
 		6C90B9A91B77A6BD00CD52A4 /* PlaylistHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C90B9A81B77A6BD00CD52A4 /* PlaylistHeaderView.xib */; };
+		6C90B9AD1B7BD0C900CD52A4 /* MPMediaItem+PlaylistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C90B9AC1B7BD0C800CD52A4 /* MPMediaItem+PlaylistItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		6C90B9A51B77A61300CD52A4 /* PlaylistHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistHeaderView.h; sourceTree = "<group>"; };
 		6C90B9A61B77A61300CD52A4 /* PlaylistHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistHeaderView.m; sourceTree = "<group>"; };
 		6C90B9A81B77A6BD00CD52A4 /* PlaylistHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaylistHeaderView.xib; sourceTree = "<group>"; };
+		6C90B9AB1B7BD0C800CD52A4 /* MPMediaItem+PlaylistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPMediaItem+PlaylistItem.h"; sourceTree = "<group>"; };
+		6C90B9AC1B7BD0C800CD52A4 /* MPMediaItem+PlaylistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPMediaItem+PlaylistItem.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,8 @@
 				6C3509361B73C9E4003DF5FD /* PlaylistItem.h */,
 				6C90B99A1B7686E300CD52A4 /* SamplePlaylistItem.h */,
 				6C90B99B1B7686E300CD52A4 /* SamplePlaylistItem.m */,
+				6C90B9AB1B7BD0C800CD52A4 /* MPMediaItem+PlaylistItem.h */,
+				6C90B9AC1B7BD0C800CD52A4 /* MPMediaItem+PlaylistItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				6C3509351B73B4FE003DF5FD /* PlaylistDataSource.m in Sources */,
 				6C90B99C1B7686E300CD52A4 /* SamplePlaylistItem.m in Sources */,
 				6C1BE4A81B67C7D300153436 /* ViewController.m in Sources */,
+				6C90B9AD1B7BD0C900CD52A4 /* MPMediaItem+PlaylistItem.m in Sources */,
 				6C90B9A41B7699CD00CD52A4 /* PlaylistItemCollectionViewCell.m in Sources */,
 				6C90B9A71B77A61300CD52A4 /* PlaylistHeaderView.m in Sources */,
 				6C1BE4A51B67C7D300153436 /* AppDelegate.m in Sources */,

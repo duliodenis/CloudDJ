@@ -10,11 +10,11 @@
 
 @implementation SamplePlaylistItem
 
-- (instancetype)initWithImage:(UIImage *)image artist:(NSString *)artist song:(NSString *)song {
+- (instancetype)initWithImage:(UIImage *)image artist:(NSString *)artist title:(NSString *)title {
     if (self = [super init]) {
         _image = image;
         _artist = artist;
-        _song = song;
+        _title = title;
     }
     return self;
 }

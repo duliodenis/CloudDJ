@@ -97,7 +97,10 @@
             forState:UIControlStateNormal];
     [button setImage:[imageSelectedState imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
             forState:UIControlStateHighlighted];
-    button.frame = CGRectMake(0, 0, imageNormalState.size.width *2, imageNormalState.size.height *2);
+    button.frame = CGRectMake(0, 0, imageNormalState.size.width * 4, imageNormalState.size.height *2);
+    
+    // increase tap target by making the margins for the rectangle around the button's image larger
+    button.imageEdgeInsets = UIEdgeInsetsMake(-20, -40, -20, -40);
 
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }

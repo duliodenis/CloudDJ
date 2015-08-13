@@ -12,6 +12,6 @@
 
 @property (nonatomic, readonly) UIImage *image;     // album artwork
 @property (nonatomic, readonly) NSString *artist;   // artist name
-@property (nonatomic, readonly) NSString *song;     // media file 
+@property (nonatomic, readonly) NSString *title;     // media file 
 
 @end

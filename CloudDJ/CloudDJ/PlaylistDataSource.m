@@ -83,7 +83,7 @@
     id<PlaylistItem> playlistItem = self.items[indexPath.row];
     cell.imageView.image = playlistItem.image;
     cell.artistLabel.text = playlistItem.artist;
-    cell.songLabel.text = playlistItem.song;
+    cell.songLabel.text = playlistItem.title;
      
     return cell;
 }

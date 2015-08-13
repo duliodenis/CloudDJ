@@ -13,7 +13,7 @@
 - (void)setPlaylistItem:(id<PlaylistItem>)playlistItem animated:(BOOL)animated {
     void (^updateBlock)() = ^ {
         self.artistLabel.text = [playlistItem artist];
-        self.songLabel.text = [playlistItem song];
+        self.songLabel.text = [playlistItem title];
         self.imageView.image = [playlistItem image];
         self.blurredImageView.image = [playlistItem image];
     };

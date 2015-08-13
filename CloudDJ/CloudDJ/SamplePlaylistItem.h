@@ -13,10 +13,10 @@
 @interface SamplePlaylistItem : NSObject <PlaylistItem>
 @property (nonatomic, readonly) UIImage *image;     // album artwork
 @property (nonatomic, readonly) NSString *artist;   // artist name
-@property (nonatomic, readonly) NSString *song;     // media file
+@property (nonatomic, readonly) NSString *title;     // media file
 
 - (instancetype)initWithImage:(UIImage *)image
                        artist:(NSString *)artist
-                         song:(NSString *)song;
+                         title:(NSString *)title;
 
 @end

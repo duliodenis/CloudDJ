@@ -7,6 +7,15 @@
 //
 
 #import "Playerbar.h"
+#import "UIButton+BackgroundColorForState.h"
+
+
+@interface Playerbar()
+
+@property (nonatomic) UIBarButtonItem *playButton;
+
+@end
+
 
 @implementation Playerbar
 
@@ -20,6 +29,25 @@
     for (UIBarButtonItem *item in self.items) {
         item.enabled = enabled;
     }
+}
+
+
+- (void)setPlayButtonState:(BOOL)isPlaying {
+    UIImage *image = nil;
+    UIImage *highlightedImage = nil;
+    
+    if (isPlaying) {
+        image = [self templateImageNamed:@"1242-pause-toolbar"];
+        highlightedImage = [self templateImageNamed:@"1242-pause-selected"];
+    } else {
+        image = [self templateImageNamed:@"1241-play-toolbar"];
+        highlightedImage = [self templateImageNamed:@"1241-play-toolbar-selected"];
+    }
+    
+    UIBarButtonItem *playButtonItem = [self playButton];
+    UIButton *playButton = (UIButton *)playButtonItem.customView;
+    [playButton setImage:image forState:UIControlStateNormal];
+    [playButton setImage:highlightedImage forState:UIControlStateHighlighted];
 }
 
 
@@ -46,28 +74,37 @@
 
 
 - (void)initializePlayerbar {
-    self.spacing = 30;
-    
-    UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                                   target:nil
-                                                                                   action:nil];
-    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                                                                                target:nil
-                                                                                action:nil];
-    [fixedSpace setWidth:self.spacing];
-    
     UIBarButtonItem *previousButton = [self setupPreviousButton];
     UIBarButtonItem *playButton = [self setupPlayButton];
     UIBarButtonItem *nextButton = [self setupNextButton];
     
-    self.items = @[flexibleSpace,
-                   previousButton,
-                   fixedSpace,
+    self.items = @[previousButton,
                    playButton,
-                   fixedSpace,
-                   nextButton,
-                   flexibleSpace
+                   nextButton
                    ];
+    
+    // In order to use AutoLayout we need UIViews from the buttons
+    UIView *b1 = previousButton.customView;
+    UIView *b2 = playButton.customView;
+    UIView *b3 = nextButton.customView;
+    
+    // horizontal constraints: buttons equally spaced
+    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-[b1]-[b2(==b1)]-[b3(==b1)]-|"
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:NSDictionaryOfVariableBindings(b1,b2,b3)];
+    // vertical constraints
+    for (UIView *b in @[b1, b2, b3]) {
+        // for testing the autolayout borders
+        // b.backgroundColor = [UIColor yellowColor];
+        NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[b]-(0)-|"
+                                                                       options:0
+                                                                       metrics:nil
+                                                                         views:NSDictionaryOfVariableBindings(b)];
+        constraints = [constraints arrayByAddingObjectsFromArray:verticalConstraints];
+    }
+    
+    [NSLayoutConstraint activateConstraints:constraints];
     
     for (UIBarButtonItem *item in self.items) {
         item.enabled = self.enabled;
@@ -77,30 +114,36 @@
 
 #pragma mark - Button Helper Methods
 
+
+- (UIImage *)templateImageNamed:(NSString *)name {
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    
+    UIImage *image = [UIImage imageNamed:name
+                                inBundle:bundle
+           compatibleWithTraitCollection:self.traitCollection];
+    return [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+}
+
+
 - (UIBarButtonItem *)buttonWithImageNamed:(NSString *)imageName target:(id)target action:(SEL)action {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    NSBundle *bundle = [NSBundle bundleForClass:self.class];
-    
-    UIImage *imageNormalState = [UIImage imageNamed:imageName
-                                           inBundle:bundle
-                      compatibleWithTraitCollection:self.traitCollection];
-    UIImage *imageSelectedState = [UIImage imageNamed:[NSString stringWithFormat:@"%@-selected",imageName]
-                                             inBundle:bundle
-                        compatibleWithTraitCollection:self.traitCollection];
+    UIImage *imageNormalState = [self templateImageNamed:imageName];
+    UIImage *imageSelectedState = [self templateImageNamed:[NSString stringWithFormat:@"%@-selected",imageName]];
     
     [button addTarget:target
                action:action
      forControlEvents:UIControlEventTouchUpInside];
     
-    [button setImage:[imageNormalState imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
-            forState:UIControlStateNormal];
-    [button setImage:[imageSelectedState imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
-            forState:UIControlStateHighlighted];
-    button.frame = CGRectMake(0, 0, imageNormalState.size.width * 4, imageNormalState.size.height *2);
+    [button setImage:imageNormalState   forState:UIControlStateNormal];
+    [button setImage:imageSelectedState forState:UIControlStateHighlighted];
     
-    // increase tap target by making the margins for the rectangle around the button's image larger
-    button.imageEdgeInsets = UIEdgeInsetsMake(-20, -40, -20, -40);
+    // Use the new UIButton Category to set the playbar button's highlighted color
+    [button setBackgroundColor:[UIColor clearColor] forState:UIControlStateNormal];
+    [button setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.3] forState:UIControlStateHighlighted];
+
+    button.translatesAutoresizingMaskIntoConstraints = NO;
+    
 
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
@@ -114,9 +157,12 @@
 
 
 - (UIBarButtonItem *)setupPlayButton {
-    return [self buttonWithImageNamed:@"1241-play-toolbar"
-                               target:self
-                               action:@selector(playPause:)];
+    if (!self.playButton) {
+        self.playButton = [self buttonWithImageNamed:@"1241-play-toolbar"
+                                              target:self
+                                              action:@selector(playPause:)];
+    }
+    return self.playButton;
 }
 
 
@@ -167,7 +213,13 @@
 
 
 - (void)playPause:(id)sender {
+#if TARGET_IPHONE_SIMULATOR
+    static BOOL isPlaying = NO;
+    [self setPlayButtonState:isPlaying];
+    isPlaying = !isPlaying;
+#else
     [self.playerbarDelegate playerbarPlayPause:self];
+#endif
 }
 
 @end

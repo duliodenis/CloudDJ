@@ -43,6 +43,12 @@
     NSArray *objects = [headerNib instantiateWithOwner:self
                                               options:nil];
     
+    UICollectionViewFlowLayout *flowlayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    
+    CGSize itemSize = flowlayout.itemSize;
+    itemSize.width = self.view.frame.size.width;
+    flowlayout.itemSize = itemSize;
+    
     PlaylistHeaderView *header = [objects firstObject];
     [self.headerContainerView addSubview:header];
     
@@ -87,14 +93,15 @@
 - (void)playPause {
     if (self.player.playbackState == MPMusicPlaybackStatePlaying) {
         [self.player pause];
+        [self.playerBar setPlayButtonState:NO];
     } else {
         [self.player play];
+        [self.playerBar setPlayButtonState:YES];
     }
 }
 
 
 - (IBAction)playPauseToggle:(id)sender {
-    self.playButton = sender;
     [self playPause];
 }
 

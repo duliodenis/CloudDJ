@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Dulio Denis. All rights reserved.
 //
 
-#import <MediaPlayer/MediaPlayer.h>
+@import MediaPlayer;
 
 @interface MPMediaItem (PlaylistItem)
 

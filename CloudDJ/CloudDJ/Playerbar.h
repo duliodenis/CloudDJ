@@ -18,6 +18,8 @@ IB_DESIGNABLE
 @property (nonatomic, assign) IBInspectable CGFloat spacing;
 @property (nonatomic, assign) BOOL enabled;
 
+- (void)setPlayButtonState:(BOOL)isPlaying;
+
 @end 
 
 @protocol PlayerbarDelegate <NSObject>
